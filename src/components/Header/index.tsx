@@ -1,21 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { MdShoppingBasket } from "react-icons/md";
+import { Link } from 'react-router-dom';
+import { MdShoppingBasket } from 'react-icons/md';
 
-import logo from "../../assets/images/logo.svg";
-import { Container, Cart } from "./styles";
-import { useCart } from "../../hooks/useCart";
+import logo from '../../assets/images/logo.svg';
+import { Container, Cart } from './styles';
+import { useCart } from '../../hooks/useCart';
 
 const Header = (): JSX.Element => {
   const { cart } = useCart();
-  let cartSize = 0;
-  if (cart.length > 0) {
-    console.log(cart);
-
-    cart.map((cartItem) => {
-      cartSize += cartItem.amount;
-    });
-  }
+  const cartSize = cart.length;
 
   return (
     <Container>
